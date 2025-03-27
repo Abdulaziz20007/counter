@@ -13,6 +13,22 @@ function updateCount(newCount) {
   count = newCount;
   countDisplay.textContent = count;
   localStorage.setItem("count", count);
+
+  if (count === 0) {
+    decrementBtn.disabled = true;
+    decrementBtn.style.opacity = "0.5";
+    decrementBtn.style.cursor = "not-allowed";
+  } else {
+    decrementBtn.disabled = false;
+    decrementBtn.style.opacity = "1";
+    decrementBtn.style.cursor = "pointer";
+  }
+}
+
+if (count === 0) {
+  decrementBtn.disabled = true;
+  decrementBtn.style.opacity = "0.5";
+  decrementBtn.style.cursor = "not-allowed";
 }
 
 decrementBtn.addEventListener("click", () => {
